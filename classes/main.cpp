@@ -1,32 +1,45 @@
 #include <iostream>
-using std::cin;
 using std::cout;
 using std::endl;
 
 #include <string> // classe de string no padrão C++
 
-using std::getline;
 using std::string;
 
 class SalesScore
 {
 public:
+    SalesScore(string title)
+    {
+        setStoreTitle(title);
+    }
+
+    void setStoreTitle(string title)
+    {
+        storeTitle = title;
+    }
+
+    string getStoreTitle()
+    {
+        return storeTitle;
+    }
+
     void bootSystem(string storeTitle)
     {
         cout << "Score de Vendas!" << storeTitle << endl;
     }
+
+private:
+    string storeTitle;
 };
 
 int main()
 {
     string storeTitle;
+    SalesScore salesScore("Loja 1");
+    SalesScore salesScore2("Loja 2");
 
-    cout << "Digite o nome da loja: ";
-    cin >> storeTitle;
-
-    SalesScore salesScore;
-
-    salesScore.bootSystem(storeTitle);
-
+    cout << "Loja 1 = " << salesScore.getStoreTitle() << endl;
+    cout << "Loja 2 = " << salesScore2.getStoreTitle() << endl;
     return 0;
 }
