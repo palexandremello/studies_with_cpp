@@ -9,25 +9,10 @@ using std::string;
 class SalesScore
 {
 public:
-    SalesScore(string title)
-    {
-        setStoreTitle(title);
-    }
-
-    void setStoreTitle(string title)
-    {
-        storeTitle = title;
-    }
-
-    string getStoreTitle()
-    {
-        return storeTitle;
-    }
-
-    void bootSystem(string storeTitle)
-    {
-        cout << "Score de Vendas!" << storeTitle << endl;
-    }
+    SalesScore(string title);
+    void setStoreTitle(string title);
+    string getStoreTitle();
+    void bootSystem(string storeTitle);
 
 private:
     string storeTitle;
