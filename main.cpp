@@ -15,5 +15,6 @@ int main()
     std::cout << "Enter two numbers: \a";
     std::cin >> num1 >> num2;
     std::cout << "You entered: " << num1 << " and " << num2 << std::endl;
+    std::cout << "The multiplication of " << num1 << " and " << num2 << " is " << num1 * num2 << std::endl;
     return 0;
 }
