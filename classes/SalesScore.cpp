@@ -13,7 +13,16 @@ SalesScore::SalesScore(string title)
 
 void SalesScore::setStoreTitle(string title)
 {
-    storeTitle = title;
+
+    if (title.length() <= 20)
+        storeTitle = title;
+
+    if (title.length() > 20)
+    {
+        storeTitle = title.substr(0, 20);
+        cout << "O título da loja deve ter no máximo 20 caracteres!"
+             << endl;
+    }
 }
 
 string SalesScore::getStoreTitle()
