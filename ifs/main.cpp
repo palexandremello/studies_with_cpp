@@ -47,5 +47,31 @@ int main()
         cout << "Muito frio" << endl;
     }
 
+    int nota;
+
+    cout << "Digite a nota: " << endl;
+
+    cin >> nota;
+
+    if (nota < 0 || nota > 100)
+    {
+        cout << "Entrada Inválida" << endl;
+    }
+    else if (nota >= 90 && nota <= 100)
+    {
+        cout << "Grau A" << endl;
+    }
+    else if (nota >= 80 && nota <= 89)
+    {
+        cout << "Grau B" << endl;
+    }
+    else if (nota >= 70 && nota <= 79)
+    {
+        cout << "Grau C" << endl;
+    }
+    else
+    {
+        cout << "REPROVADO" << endl;
+    }
     return 0;
 }
