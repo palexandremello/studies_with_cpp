@@ -18,7 +18,27 @@ int main()
     }
 
     cout << (val ? "Valor maior que 12"
-                 : "Valor menor que 12");
+                 : "Valor menor que 12")
+         << endl;
+
+    int temperature = 25;
+
+    if (temperature > 40)
+    {
+        cout << "Muito calor" << endl;
+    }
+    else if (temperature > 30)
+    {
+        cout << "Calor" << endl;
+    }
+    else if (temperature > 20)
+    {
+        cout << "Tempreatura ok" << endl;
+    }
+    else if (temperature > 10)
+    {
+        cout << "Frio" << endl;
+    }
 
     return 0;
 }
