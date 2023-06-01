@@ -17,5 +17,8 @@ int main()
         cout << "Valor menor ou igual a 12" << endl;
     }
 
+    cout << (val ? "Valor maior que 12"
+                 : "Valor menor que 12");
+
     return 0;
 }
