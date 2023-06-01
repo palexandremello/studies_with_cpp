@@ -12,6 +12,6 @@ int main()
     while (a < 10)
     {
         cout << a << endl;
-        a += 1;
+        a++;
     }
 }

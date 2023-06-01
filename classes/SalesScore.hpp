@@ -13,6 +13,7 @@ public:
     void setStoreTitle(string title);
     string getStoreTitle();
     void bootSystem(string storeTitle);
+    void calcSalesAverage();
 
 private:
     string storeTitle;
