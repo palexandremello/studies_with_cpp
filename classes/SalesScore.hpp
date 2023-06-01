@@ -12,7 +12,7 @@ public:
     SalesScore(string title);
     void setStoreTitle(string title);
     string getStoreTitle();
-    void bootSystem(string storeTitle);
+    void bootSystem();
     void calcSalesAverage();
 
 private:
