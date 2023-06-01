@@ -21,7 +21,10 @@ int main()
                  : "Valor menor que 12")
          << endl;
 
-    int temperature = 25;
+    int temperature;
+
+    cout << "Digite a temperatura: ";
+    cin >> temperature;
 
     if (temperature > 40)
     {
@@ -38,6 +41,10 @@ int main()
     else if (temperature > 10)
     {
         cout << "Frio" << endl;
+    }
+    else
+    {
+        cout << "Muito frio" << endl;
     }
 
     return 0;
