@@ -6,12 +6,9 @@ using std::endl;
 
 int main()
 {
-
-    int a = 0;
-
-    while (a < 10)
-    {
-        cout << a << endl;
-        a++;
+    for (int i=1; i  <= 50; i++) {
+        cout << i << " pipe ";
     }
-}
+
+    int i = 0;
+ }
