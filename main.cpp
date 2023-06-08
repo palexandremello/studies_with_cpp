@@ -8,21 +8,32 @@ private:
   int bread;
 
 public:
-  void init(int l, int b) {
-    len = l;
-    bread = b;
-  };
-
-  int area() { return len * bread; }
-
+  Rectangle() { len = bread = 1; }
+  Rectangle(int l, int b);
+  int area();
+  int perimeter();
+  int getLength() { return len; }
+  void setLength(int l) { len = l; }
   void changeLength(int l) { len = l; }
+  ~Rectangle();
 };
 
-int main() {
-  Rectangle r;
+Rectangle::Rectangle(int l, int b) {
+  len = l;
+  bread = b;
+};
 
-  r.init(10, 5);
+int Rectangle::area() { return len * bread; };
+
+int Rectangle::perimeter() { return 2 * (len + bread); };
+
+Rectangle::~Rectangle() { cout << "Destructor called" << endl; };
+
+int main() {
+  Rectangle r(10, 5);
+
   cout << "Area is " << r.area() << endl;
+  cout << "Perimeter is " << r.perimeter() << endl;
   r.changeLength(20);
   cout << "Area is " << r.area() << endl;
   return 0;
