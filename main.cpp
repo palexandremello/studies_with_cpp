@@ -2,45 +2,28 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int val;
+class Rectangle {
+private:
+  int len;
+  int bread;
 
-    std::cout << "Enter a number: \a";
-    std::cin >> val;
-    std::cout << "You entered: " << val << std::endl;
+public:
+  void init(int l, int b) {
+    len = l;
+    bread = b;
+  };
 
-    int num1, num2;
+  int area() { return len * bread; }
 
-    std::cout << "Enter two numbers: \a";
-    std::cin >> num1 >> num2;
-    std::cout << "You entered: " << num1 << " and " << num2 << std::endl;
+  void changeLength(int l) { len = l; }
+};
 
-    std::cout << "The multiplication of "
-              << num1 << " and "
-              << num2 << " is "
-              << num1 * num2 << std::endl;
+int main() {
+  Rectangle r;
 
-    std::cout << "The division of "
-              << num1 << " and "
-              << num2 << " = "
-              << (float)num1 / num2 << std::endl;
-
-    if (num1 > num2)
-    {
-        std::cout << "\n"
-                  << num1 << " is greater than " << num2 << std::endl;
-    }
-    else if (num1 == num2)
-    {
-        std::cout << num1
-                  << " is equal to " << num2 << std::endl;
-    }
-    else
-    {
-    std:
-        cout << num1
-             << " is less than " << num2 << std::endl;
-    }
-    return 0;
+  r.init(10, 5);
+  cout << "Area is " << r.area() << endl;
+  r.changeLength(20);
+  cout << "Area is " << r.area() << endl;
+  return 0;
 }
