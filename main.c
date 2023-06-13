@@ -1,15 +1,15 @@
 
 #include <stdio.h>
 
-int loop(int n) {
-
-  if (n == 0)
-    return -1;
-  return loop(n - 1) + n;
+void fun(int n) {
+  if (n > 0) {
+    printf("%d", n);
+    fun(n - 1);
+  }
 }
 
 int main() {
-
-  printf("%d", loop(4));
+  int x = 3;
+  fun(x); // fun(3
   return 0;
 }
