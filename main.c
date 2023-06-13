@@ -1,26 +1,15 @@
 
 #include <stdio.h>
 
-struct Rectangle {
-  int len;
-  int bread;
-};
+int loop(int n) {
 
-void init(struct Rectangle *r, int l, int b) {
-  r->len = l;
-  r->bread = b;
-};
-
-int area(struct Rectangle r) { return r.len * r.bread; };
-
-void changeLength(struct Rectangle *r, int l) { r->len = l; }
+  if (n == 0)
+    return -1;
+  return loop(n - 1) + n;
+}
 
 int main() {
 
-  struct Rectangle r;
-  init(&r, 10, 5);
-  printf("Area is %d\n", area(r));
-  changeLength(&r, 20);
-  printf("Area is %d\n", area(r));
+  printf("%d", loop(4));
   return 0;
 }
