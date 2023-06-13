@@ -2,14 +2,12 @@
 #include <stdio.h>
 
 int fun(int n) {
-  static int x = 0;
 
   if (n > 0) {
-    x++;
-    return fun(n - 1) + x;
-  }
 
-  return 0;
+    fun(n - 1);
+    printf("%d ", n); // 1 2 3 (3 2 1
+  }
 }
 
 int main() {
