@@ -140,6 +140,24 @@ void TOH(int n, int A, int B, int C) {
   }
 }
 
+void foo(int n, int sum) {
+
+  int k = 0, j = 0;
+
+  if (n == 0)
+    return;
+
+  k = n % 10;
+
+  j = n / 10;
+
+  sum = sum + k;
+
+  foo(j, sum);
+
+  printf("%d \n", k);
+}
+
 int q1(int n) {
   static int i = 1;
   if (n >= 5)
@@ -178,4 +196,9 @@ int main() {
   printf("NCR(4, 2) = %d \n", l);
   TOH(4, 1, 2, 3);
   printf("q1(1) = %d \n", q1(1));
+  int a1 = 2048, sum = 0;
+
+  foo(a1, sum);
+
+  printf("%d\n", sum);
 }
