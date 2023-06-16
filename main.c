@@ -166,6 +166,39 @@ int q1(int n) {
   i++;
   return q1(n);
 }
+
+int q4(int n)
+
+{
+
+  int x = 1, k;
+
+  if (n == 1)
+    return x;
+
+  for (k = 1; k < n; ++k)
+
+    x = x + q4(k) * q4(n - k);
+
+  return x;
+}
+
+void count(int n)
+
+{
+
+  static int d = 1;
+
+  printf("%d ", n);
+
+  printf("%d ", d);
+
+  d++;
+
+  if (n > 1)
+    count(n - 1);
+  printf("%d ", d);
+}
 int main() {
 
   for (int i = 0; i < 100; i++) {
@@ -201,4 +234,8 @@ int main() {
   foo(a1, sum);
 
   printf("%d\n", sum);
+
+  printf("q4(5) = %d \n", q4(5));
+
+  count(3);
 }
