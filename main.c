@@ -139,6 +139,15 @@ void TOH(int n, int A, int B, int C) {
     TOH(n - 1, B, A, C);
   }
 }
+
+int q1(int n) {
+  static int i = 1;
+  if (n >= 5)
+    return n;
+  n = n + i;
+  i++;
+  return q1(n);
+}
 int main() {
 
   for (int i = 0; i < 100; i++) {
@@ -168,4 +177,5 @@ int main() {
   printf("nCr(4, 2) = %d ", k);
   printf("NCR(4, 2) = %d \n", l);
   TOH(4, 1, 2, 3);
+  printf("q1(1) = %d \n", q1(1));
 }
