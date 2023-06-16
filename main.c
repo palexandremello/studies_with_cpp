@@ -132,6 +132,13 @@ int NCR(int n, int r) {
   return NCR(n - 1, r - 1) + NCR(n - 1, r);
 };
 
+void TOH(int n, int A, int B, int C) {
+  if (n > 0) {
+    TOH(n - 1, A, C, B);
+    printf("from %d to %d\n", A, C);
+    TOH(n - 1, B, A, C);
+  }
+}
 int main() {
 
   for (int i = 0; i < 100; i++) {
@@ -159,5 +166,6 @@ int main() {
   printf("fib(7) = %d ", h);
   printf("fibmem(7) = %d ", j);
   printf("nCr(4, 2) = %d ", k);
-  printf("NCR(4, 2) = %d ", l);
+  printf("NCR(4, 2) = %d \n", l);
+  TOH(4, 1, 2, 3);
 }
