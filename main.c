@@ -51,15 +51,26 @@ double etaylor(int x, int n) {
   f = f * n;
   return r + (p / f);
 }
+
+double newe(int x, int n) {
+  static double s = 1;
+  if (n == 0)
+    return s;
+  s = 1 + x * s / n;
+  return newe(x, n - 1);
+}
 int main() {
   int a = sum(5);
   int b = fact(5);
   int c = power(2, 9);
   int d = pow1(2, 9);
-  double e = etaylor(1, 1);
+  double e = etaylor(1, 10);
+  double f = newe(1, 10);
+
   printf("%d ", a);
   printf("%d", b);
   printf(" %d ", c);
   printf(" %d ", d);
   printf(" %f ", e);
+  printf(" %f ", f);
 }
