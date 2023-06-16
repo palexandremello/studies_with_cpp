@@ -96,7 +96,30 @@ int forfib(int n) {
 
   return s;
 }
+
+int farray[100];
+
+int fibmem(int n) {
+
+  if (n <= 1) {
+    farray[n] = n;
+    return n;
+  } else {
+    if (farray[n - 2] == -1) {
+      farray[n - 2] = fibmem(n - 2);
+    }
+    if (farray[n - 1] == -1) {
+      farray[n - 1] = fibmem(n - 1);
+    };
+
+    return farray[n - 2] + farray[n - 1];
+  }
+};
 int main() {
+
+  for (int i = 0; i < 100; i++) {
+    farray[i] = -1;
+  };
   int a = sum(5);
   int b = fact(5);
   int c = power(2, 9);
@@ -104,8 +127,8 @@ int main() {
   double e = etaylor(1, 10);
   double f = newe(1, 10);
   double g = fore(1, 10);
-  int h = fib(7);
-  int i = forfib(7);
+  int h = fib(40);
+  int j = fibmem(40);
 
   printf("%d ", a);
   printf("%d", b);
@@ -115,5 +138,5 @@ int main() {
   printf(" %f ", f);
   printf(" %f ", g);
   printf("fib(7) = %d ", h);
-  printf("fib(7) = %d ", i);
+  printf("fibmem(7) = %d ", j);
 }
