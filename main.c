@@ -123,7 +123,15 @@ int nCr(int n, int r) {
   den = fact(r) * fact(n - r);
 
   return num / den;
-}
+};
+
+int NCR(int n, int r) {
+  if (n == r || r == 0) {
+    return 1;
+  }
+  return NCR(n - 1, r - 1) + NCR(n - 1, r);
+};
+
 int main() {
 
   for (int i = 0; i < 100; i++) {
@@ -139,6 +147,7 @@ int main() {
   int h = fib(2);
   int j = fibmem(40);
   int k = nCr(4, 2);
+  int l = NCR(4, 2);
 
   printf("%d ", a);
   printf("%d", b);
@@ -150,4 +159,5 @@ int main() {
   printf("fib(7) = %d ", h);
   printf("fibmem(7) = %d ", j);
   printf("nCr(4, 2) = %d ", k);
+  printf("NCR(4, 2) = %d ", l);
 }
