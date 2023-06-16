@@ -59,6 +59,21 @@ double newe(int x, int n) {
   s = 1 + x * s / n;
   return newe(x, n - 1);
 }
+
+double fore(int x, int n) {
+  double s = 1;
+  int i;
+  double num = 1;
+  double den = 1;
+
+  for (i = 1; i <= n; i++) {
+    num *= x;
+    den *= i;
+    s += num / den;
+  }
+  return s;
+}
+
 int main() {
   int a = sum(5);
   int b = fact(5);
@@ -66,6 +81,7 @@ int main() {
   int d = pow1(2, 9);
   double e = etaylor(1, 10);
   double f = newe(1, 10);
+  double g = fore(1, 10);
 
   printf("%d ", a);
   printf("%d", b);
@@ -73,4 +89,5 @@ int main() {
   printf(" %d ", d);
   printf(" %f ", e);
   printf(" %f ", f);
+  printf(" %f ", g);
 }
