@@ -115,6 +115,15 @@ int fibmem(int n) {
     return farray[n - 2] + farray[n - 1];
   }
 };
+
+int nCr(int n, int r) {
+  int num, den;
+
+  num = fact(n);
+  den = fact(r) * fact(n - r);
+
+  return num / den;
+}
 int main() {
 
   for (int i = 0; i < 100; i++) {
@@ -127,8 +136,9 @@ int main() {
   double e = etaylor(1, 10);
   double f = newe(1, 10);
   double g = fore(1, 10);
-  int h = fib(40);
+  int h = fib(2);
   int j = fibmem(40);
+  int k = nCr(4, 2);
 
   printf("%d ", a);
   printf("%d", b);
@@ -139,4 +149,5 @@ int main() {
   printf(" %f ", g);
   printf("fib(7) = %d ", h);
   printf("fibmem(7) = %d ", j);
+  printf("nCr(4, 2) = %d ", k);
 }
