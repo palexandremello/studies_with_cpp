@@ -37,13 +37,29 @@ int pow1(int m, int n) {
     return pow1(m * m, n / 2);
   return m * pow1(m * m, (n - 1) / 2);
 }
+
+double etaylor(int x, int n) {
+  static double p = 1, f = 1;
+  double r;
+
+  if (n == 0) {
+    return 1;
+  }
+
+  r = etaylor(x, n - 1);
+  p = p * x;
+  f = f * n;
+  return r + (p / f);
+}
 int main() {
   int a = sum(5);
   int b = fact(5);
   int c = power(2, 9);
   int d = pow1(2, 9);
+  double e = etaylor(1, 1);
   printf("%d ", a);
   printf("%d", b);
   printf(" %d ", c);
   printf(" %d ", d);
+  printf(" %f ", e);
 }
