@@ -74,6 +74,13 @@ double fore(int x, int n) {
   return s;
 }
 
+int fib(int n) {
+  if (n <= 1) {
+    return n;
+  }
+
+  return fib(n - 2) + fib(n - 1);
+}
 int main() {
   int a = sum(5);
   int b = fact(5);
@@ -82,6 +89,9 @@ int main() {
   double e = etaylor(1, 10);
   double f = newe(1, 10);
   double g = fore(1, 10);
+  int h = fib(1);
+  int i = fib(5);
+  int j = fib(7);
 
   printf("%d ", a);
   printf("%d", b);
@@ -90,4 +100,7 @@ int main() {
   printf(" %f ", e);
   printf(" %f ", f);
   printf(" %f ", g);
+  printf("fib(1) = %d ", h);
+  printf("fib(5) = %d ", i);
+  printf("fib(7) = %d ", j);
 }
