@@ -17,7 +17,7 @@ using std::time;
 
 
 
-void randomNumbers(int numbers);
+void randomNumbers(int numbers, unsigned min, unsigned max);
 inline unsigned rangeRand(unsigned first, unsigned range);
 
 inline int soma (int a, int b);
@@ -48,6 +48,7 @@ int main() {
    int var = 20;
    char opt = 0;
    int num = 0;
+   unsigned min, max;
    cout << boolalpha;
    cout << (true && true && true && true) << endl;
    cout << (false  || true) << endl;
@@ -64,10 +65,13 @@ int main() {
    do {
         cout << "Sortear quantos numeros? ";
         cin >> num;
+        cout << "Qual o valor minimo?";
+        cin >> min;
+        cout << "Qual é o valor maximo?";
+        cin >> max;
 
         srand(time(0));
-        randomNumbers(num);
-
+        randomNumbers(num, min, max);
         cout << endl << endl << "Novo Sorteio? (s) or (n): ";
         cin >> opt;
   } while (opt != 'n');
@@ -77,9 +81,9 @@ int main() {
 
 
 
-void randomNumbers(int numbers) {
+void randomNumbers(int numbers, unsigned  min, unsigned max) {
      for (int i = 1; i <= numbers; i++) {
-          cout << setw(5) << rangeRand(1, 50);
+          cout << setw(5) << rangeRand(min, max);
 
           if (i % 2 == 0)
               cout << endl;
