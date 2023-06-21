@@ -19,6 +19,7 @@ using std::time;
 
 void randomNumbers(int numbers, unsigned min, unsigned max);
 inline unsigned rangeRand(unsigned first, unsigned range);
+inline void  sum(unsigned value, unsigned &accumulator);
 
 inline int soma (int a, int b);
 void update(int &value);
@@ -82,18 +83,28 @@ int main() {
 
 
 void randomNumbers(int numbers, unsigned  min, unsigned max) {
-     for (int i = 1; i <= numbers; i++) {
-          cout << setw(5) << rangeRand(min, max);
+      unsigned  result = 0;
+      for (int i = 1; i <= numbers; i++) {
+          unsigned random_number = rangeRand(min, max);
+          sum(random_number, result);
+          cout << setw(5) << random_number;
 
           if (i % 2 == 0)
               cout << endl;
  }
+     cout << endl  << "A soma dos valores randomizados = " << result << endl;
 }
 
 
 inline unsigned rangeRand(unsigned first, unsigned range) {
 
      return  first + (rand() % range);
+}
+
+inline void sum(unsigned value, unsigned &accumulator) {
+
+   accumulator += value;
+
 }
 
 inline int soma(int a, int b)  {
