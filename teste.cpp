@@ -26,10 +26,13 @@ double freqRC(double R, double C) {
    freq = 1 / (2*3.141592*R*C);
    return freq;
 };
+
+int var = 10;
+
 int main() {
 
    int value = 2;
-
+   int var = 20;
    cout << boolalpha;
    cout << (true && true && true && true) << endl;
    cout << (false  || true) << endl;
@@ -40,6 +43,8 @@ int main() {
    cout << value << endl;
    update(value);
    cout << "New value = " << value << endl;
+   cout << ::var << endl;
+   cout << var << endl;
    return 0;
 
 }
