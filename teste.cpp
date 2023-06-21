@@ -6,6 +6,9 @@ using std::endl;
 using std::boolalpha;
 
 
+
+inline int soma (int a, int b);
+
 void hello() {
    cout << "Hello" << endl;
 };
@@ -31,6 +34,14 @@ int main() {
    hello();
    cout << cube(10) << endl;
    cout << freqRC(1000, 10E-9) << "Hz " << endl;
+   cout << soma(10, 20) << endl;
    return 0;
 
+}
+
+
+
+inline int soma(int a, int b)  {
+
+    return a + b;
 }
