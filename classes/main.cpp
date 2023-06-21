@@ -9,5 +9,6 @@ int main()
     SalesScore salesScore("Loja 1");
 
     salesScore.bootSystem();
-    salesScore.calcSalesAverage();
+    salesScore.enterProducts();
+    salesScore.productsReport();
 }

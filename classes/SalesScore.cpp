@@ -15,6 +15,7 @@ using std::string;
 SalesScore::SalesScore(string title)
 {
     setStoreTitle(title);
+    prodA = 0, prodB = 0, prodC = 0;
 }
 
 void SalesScore::setStoreTitle(string title)
@@ -85,4 +86,52 @@ void SalesScore::calcSalesAverage()
     {
         cout << "Nenhum valor foi inserido" << endl;
     }
+}
+
+
+void SalesScore::enterProducts() {
+    int product;
+
+    cout << "Insira o produto vendido: " << endl
+         << "ou tecle ctrl z para finalizar" << endl;
+
+
+    while ((product = cin.get())  != EOF) {
+
+        switch (product) {
+
+            case 'a':
+            case 'A':
+                prodA++;
+                break;
+
+            case 'b':
+            case 'B':
+                prodB++;
+                break;
+
+            case 'c':
+            case 'C':
+                prodC++;
+                break;
+            case '\n':
+            case '\t':
+            case ' ':
+                break;
+
+            default:
+                cout << "Produto nao cadastrado, insira um produto valido: " << endl;
+        }
+    }
+
+}
+
+
+void SalesScore::productsReport() {
+
+    cout << "\n=================================="
+         << "\nREsumo dos produtos vendidos."
+         << "\nProduto A: " << prodA
+         << "\nProduto B: " << prodB
+         << "\nProduto C: " << prodC << endl;
 }

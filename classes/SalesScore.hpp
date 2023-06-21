@@ -14,7 +14,12 @@ public:
     string getStoreTitle();
     void bootSystem();
     void calcSalesAverage();
+    void enterProducts();
+    void productsReport();
 
 private:
     string storeTitle;
+    int prodA;
+    int prodB;
+    int prodC;
 };
