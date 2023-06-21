@@ -16,6 +16,12 @@ int cube(int value) {
 
 };
 
+
+double freqRC(double R, double C) {
+   double freq;
+   freq = 1 / (2*3.141592*R*C);
+   return freq;
+};
 int main() {
 
 
@@ -24,6 +30,7 @@ int main() {
    cout << (false  || true) << endl;
    hello();
    cout << cube(10) << endl;
+   cout << freqRC(1000, 10E-9) << endl;
    return 0;
 
 }
