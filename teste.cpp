@@ -97,8 +97,7 @@ void randomNumbers(int numbers, unsigned  min, unsigned max) {
 
 
 inline unsigned rangeRand(unsigned first, unsigned range) {
-
-     return  first + (rand() % range);
+     return  first + (rand() % (range+1 - first));
 }
 
 inline void sum(unsigned value, unsigned &accumulator) {
