@@ -5,7 +5,20 @@ using std::cout;
 using std::endl;
 using std::boolalpha;
 
+#include <iomanip>
+using std::setw;
 
+#include <cstdlib>
+using std::rand;
+using std::srand;
+
+#include <ctime>
+using std::time;
+
+
+
+void randomNumbers(int numbers);
+inline unsigned rangeRand(unsigned first, unsigned range);
 
 inline int soma (int a, int b);
 void update(int &value);
@@ -33,6 +46,8 @@ int main() {
 
    int value = 2;
    int var = 20;
+   char opt = 0;
+   int num = 0;
    cout << boolalpha;
    cout << (true && true && true && true) << endl;
    cout << (false  || true) << endl;
@@ -45,11 +60,37 @@ int main() {
    cout << "New value = " << value << endl;
    cout << ::var << endl;
    cout << var << endl;
+
+   do {
+        cout << "Sortear quantos numeros? ";
+        cin >> num;
+
+        srand(time(0));
+        randomNumbers(num);
+
+        cout << endl << endl << "Novo Sorteio? (s) or (n): ";
+        cin >> opt;
+  } while (opt != 'n');
    return 0;
 
 }
 
 
+
+void randomNumbers(int numbers) {
+     for (int i = 1; i <= numbers; i++) {
+          cout << setw(5) << rangeRand(1, 50);
+
+          if (i % 2 == 0)
+              cout << endl;
+ }
+}
+
+
+inline unsigned rangeRand(unsigned first, unsigned range) {
+
+     return  first + (rand() % range);
+}
 
 inline int soma(int a, int b)  {
 
