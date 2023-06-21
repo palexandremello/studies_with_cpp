@@ -30,7 +30,7 @@ int main() {
    cout << (false  || true) << endl;
    hello();
    cout << cube(10) << endl;
-   cout << freqRC(1000, 10E-9) << endl;
+   cout << freqRC(1000, 10E-9) << "Hz " << endl;
    return 0;
 
 }
