@@ -8,6 +8,7 @@ using std::boolalpha;
 
 
 inline int soma (int a, int b);
+void update(int &value);
 
 void hello() {
    cout << "Hello" << endl;
@@ -27,6 +28,7 @@ double freqRC(double R, double C) {
 };
 int main() {
 
+   int value = 2;
 
    cout << boolalpha;
    cout << (true && true && true && true) << endl;
@@ -35,6 +37,9 @@ int main() {
    cout << cube(10) << endl;
    cout << freqRC(1000, 10E-9) << "Hz " << endl;
    cout << soma(10, 20) << endl;
+   cout << value << endl;
+   update(value);
+   cout << "New value = " << value << endl;
    return 0;
 
 }
@@ -44,4 +49,10 @@ int main() {
 inline int soma(int a, int b)  {
 
     return a + b;
+}
+
+
+void update(int &value) {
+
+   value += 10;
 }
